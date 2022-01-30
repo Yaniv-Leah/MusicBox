@@ -1,0 +1,10 @@
+version: "3"
+services:
+  ngnix:
+    build: ./ngnix
+    ports:
+        - "8080:80" 
+    links:
+      - "test-web:backend"
+  test-web:
+      image: strm/helloworld-http
